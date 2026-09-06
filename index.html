@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07110f" />
+  <meta name="description" content="Swarm Deploy is a GitOps controller for Docker Swarm: reconcile stacks, services, and networks from Git, detect drift, prune orphans, and audit every deployment." />
+  <meta property="og:title" content="Swarm Deploy — GitOps for Docker Swarm" />
+  <meta property="og:description" content="Continuous delivery for Docker Swarm, with drift detection, pruning, audit history, notifications, UI and API." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://swarm-deploy.dev/" />
+  <meta property="og:image" content="https://swarm-deploy.dev/og-image.svg" />
+  <title>Swarm Deploy — GitOps for Docker Swarm</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Swarm Deploy home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="img">
+            <path d="M20 3.5 34.3 11.75v16.5L20 36.5 5.7 28.25v-16.5Z" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="14" cy="16" r="2.1" fill="currentColor"/>
+            <circle cx="26" cy="16" r="2.1" fill="currentColor"/>
+            <circle cx="20" cy="25" r="2.1" fill="currentColor"/>
+            <path d="M15.7 17.4 18.8 23M24.3 17.4 21.2 23M16.2 16h7.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>swarm-deploy</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#product">Product</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="https://github.com/swarm-deploy/swarm-deploy" target="_blank" rel="noreferrer">Docs</a>
+        <a class="nav-github" href="https://github.com/swarm-deploy/swarm-deploy" target="_blank" rel="noreferrer" aria-label="GitHub repository">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.24c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.74-1.56-2.57-.29-5.27-1.29-5.27-5.69 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.16 1.18a10.95 10.95 0 0 1 5.76 0c2.18-1.49 3.15-1.18 3.15-1.18.64 1.59.24 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.41-2.71 5.39-5.29 5.68.42.36.79 1.06.79 2.14v3.18c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot"></span> GitOps controller for Docker Swarm</div>
+          <h1>Keep your Swarm<br/><span>in sync with Git.</span></h1>
+          <p class="hero-lead">Continuous delivery built for Docker Swarm. Reconcile stacks, services, and networks. Detect drift. Prune orphaned resources. Audit every deployment.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://swarm-deploy.github.io/swarm-deploy/docs/configurator/" target="_blank" rel="noreferrer">Configure your cluster <span>↗</span></a>
+            <a class="btn btn-secondary" href="https://github.com/swarm-deploy/swarm-deploy" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.24c-3.22.7-3.9-1.37-3.9-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.74-1.56-2.57-.29-5.27-1.29-5.27-5.69 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.16 1.18a10.95 10.95 0 0 1 5.76 0c2.18-1.49 3.15-1.18 3.15-1.18.64 1.59.24 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.41-2.71 5.39-5.29 5.68.42.36.79 1.06.79 2.14v3.18c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+          <div class="hero-proof">
+            <span>Pull</span><i></i><span>Webhook</span><i></i><span>Hybrid</span><i></i><span>Swarm-native</span>
+          </div>
+        </div>
+
+        <div class="console-shell reveal delay-1" aria-label="Swarm Deploy sync activity example">
+          <div class="console-topbar">
+            <div class="console-dots"><span></span><span></span><span></span></div>
+            <div class="console-title">swarm-deploy / production</div>
+            <div class="console-live"><span></span> LIVE</div>
+          </div>
+          <div class="console-body">
+            <div class="console-meta"><span>SYNC ACTIVITY</span><span>master</span></div>
+            <div class="event-row">
+              <div class="event-icon git-icon">⌁</div>
+              <div><b>Commit detected</b><small>api: bump image to v2.8.1</small></div>
+              <time>10:42:03</time>
+            </div>
+            <div class="event-line"></div>
+            <div class="event-row">
+              <div class="event-icon diff-icon">±</div>
+              <div><b>Diff calculated</b><small>1 service changed · 0 orphaned</small></div>
+              <time>10:42:04</time>
+            </div>
+            <div class="event-line"></div>
+            <div class="event-row active">
+              <div class="event-icon sync-icon">↻</div>
+              <div><b>Reconciling stack</b><small>production / api</small></div>
+              <time>10:42:05</time>
+            </div>
+            <div class="progress"><span></span></div>
+            <div class="event-line"></div>
+            <div class="event-row success">
+              <div class="event-icon ok-icon">✓</div>
+              <div><b>Synced</b><small>Desired state matches cluster</small></div>
+              <time>10:42:11</time>
+            </div>
+            <div class="health-strip">
+              <div><span class="health-light"></span><b>Healthy</b></div>
+              <div><small>stacks</small><strong>12</strong></div>
+              <div><small>services</small><strong>47</strong></div>
+              <div><small>drift</small><strong class="zero">0</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="statement section-pad" id="product">
+      <div class="container">
+        <div class="section-kicker reveal">01 / PRODUCT</div>
+        <div class="statement-grid">
+          <h2 class="reveal">Argo CD ideas.<br/><span>Swarm-native execution.</span></h2>
+          <p class="reveal delay-1">Your Git repository is the source of truth. Swarm Deploy continuously compares desired state with the live cluster and applies only what changed — without forcing Kubernetes concepts onto Docker Swarm.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="feature-no">01</div><div class="feature-icon">↻</div>
+            <h3>Continuous reconciliation</h3><p>Sync stacks, services, and networks from Git in pull, webhook, or hybrid mode.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <div class="feature-no">02</div><div class="feature-icon">⌁</div>
+            <h3>Drift detection</h3><p>See when the live cluster no longer matches declared state and bring it back under control.</p>
+          </article>
+          <article class="feature-card reveal delay-2">
+            <div class="feature-no">03</div><div class="feature-icon">⌫</div>
+            <h3>Prune orphans</h3><p>Remove managed services that disappeared from the desired Compose definition.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-no">04</div><div class="feature-icon">◎</div>
+            <h3>Event history & audit</h3><p>Keep a durable trail of sync activity, deployments, failures, and infrastructure changes.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <div class="feature-no">05</div><div class="feature-icon">⌁</div>
+            <h3>UI + API</h3><p>Operate from a single web server with stack state, realtime service tasks, events, and API access.</p>
+          </article>
+          <article class="feature-card reveal delay-2">
+            <div class="feature-no">06</div><div class="feature-icon">✦</div>
+            <h3>Operational extras</h3><p>Notifications, init deploy jobs, secrets rotation, config validation, and an AI assistant.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow section-pad" id="workflow">
+      <div class="container">
+        <div class="section-kicker reveal">02 / WORKFLOW</div>
+        <div class="workflow-head reveal"><h2>Commit. Reconcile. <span>Done.</span></h2><p>No bespoke deployment pipeline required for every stack.</p></div>
+        <div class="flow-board reveal delay-1">
+          <div class="flow-node">
+            <div class="flow-logo git-logo"><svg viewBox="0 0 24 24"><path fill="currentColor" d="m22.55 10.83-9.38-9.38a1.54 1.54 0 0 0-2.18 0L9.04 3.4l2.47 2.47a1.83 1.83 0 0 1 2.31 2.33l2.38 2.38a1.83 1.83 0 1 1-1.1 1.03l-2.22-2.22v5.84a1.83 1.83 0 1 1-1.5-.05V9.3a1.83 1.83 0 0 1-.99-2.39L7.96 4.48l-6.5 6.5a1.54 1.54 0 0 0 0 2.18l9.38 9.38a1.54 1.54 0 0 0 2.18 0l9.53-9.53a1.54 1.54 0 0 0 0-2.18Z"/></svg></div>
+            <small>SOURCE OF TRUTH</small><h3>Git repository</h3><p>Compose files + Swarm Deploy configuration</p>
+            <div class="mini-code"><span>services:</span><br/>&nbsp;&nbsp;api:<br/>&nbsp;&nbsp;&nbsp;&nbsp;image: app:<b>2.8.1</b></div>
+          </div>
+          <div class="flow-arrow"><div class="packet">commit</div><span>→</span></div>
+          <div class="flow-node controller-node">
+            <div class="pulse-ring"><div class="brand-mark large"><svg viewBox="0 0 40 40"><path d="M20 3.5 34.3 11.75v16.5L20 36.5 5.7 28.25v-16.5Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="16" r="2.1" fill="currentColor"/><circle cx="26" cy="16" r="2.1" fill="currentColor"/><circle cx="20" cy="25" r="2.1" fill="currentColor"/><path d="M15.7 17.4 18.8 23M24.3 17.4 21.2 23M16.2 16h7.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div></div>
+            <small>CONTROL LOOP</small><h3>Swarm Deploy</h3><p>Diff · validate · deploy · audit</p>
+            <div class="checks"><span>✓ desired state</span><span>✓ policies</span><span>✓ drift</span></div>
+          </div>
+          <div class="flow-arrow"><div class="packet second">reconcile</div><span>→</span></div>
+          <div class="flow-node">
+            <div class="flow-logo swarm-logo">⬡</div>
+            <small>RUNTIME</small><h3>Docker Swarm</h3><p>Native services, networks, configs & secrets</p>
+            <div class="cluster">
+              <span class="manager">M</span><span>W</span><span>W</span><span>W</span>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-note reveal"><span>↳</span> Deploys run only when a change is detected in the Compose definition or referenced configs/secrets.</div>
+      </div>
+    </section>
+
+    <section class="operations section-pad">
+      <div class="container ops-grid">
+        <div class="ops-copy reveal">
+          <div class="section-kicker">03 / OPERATE</div>
+          <h2>See what your cluster<br/><span>is actually doing.</span></h2>
+          <p>GitOps is more useful when the control loop is observable. Swarm Deploy keeps deployment events, service state, task details, and sync outcomes close to the workflow.</p>
+          <ul class="check-list">
+            <li><span>✓</span> Realtime service task snapshot</li>
+            <li><span>✓</span> Persisted event history</li>
+            <li><span>✓</span> Success / failure notifications</li>
+            <li><span>✓</span> Health endpoints and monitoring configs</li>
+            <li><span>✓</span> HTTP API for automation</li>
+          </ul>
+        </div>
+        <div class="dashboard-card reveal delay-1">
+          <div class="dash-head"><div><small>CLUSTER</small><strong>production</strong></div><span class="healthy-pill">● healthy</span></div>
+          <div class="dash-tabs"><span class="active">Stacks</span><span>Events</span><span>Services</span></div>
+          <div class="stack-row"><div><span class="stack-status synced">✓</span><div><b>gateway</b><small>3 services</small></div></div><span class="sync-badge">Synced</span></div>
+          <div class="stack-row"><div><span class="stack-status synced">✓</span><div><b>observability</b><small>5 services</small></div></div><span class="sync-badge">Synced</span></div>
+          <div class="stack-row"><div><span class="stack-status syncing">↻</span><div><b>application</b><small>8 services</small></div></div><span class="sync-badge pending">Syncing</span></div>
+          <div class="stack-row"><div><span class="stack-status synced">✓</span><div><b>storage</b><small>4 services</small></div></div><span class="sync-badge">Synced</span></div>
+          <div class="dash-footer"><span>Last reconciliation</span><b>8 sec ago</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecosystem section-pad" id="ecosystem">
+      <div class="container">
+        <div class="section-kicker reveal">04 / ECOSYSTEM</div>
+        <div class="ecosystem-title reveal"><h2>More than a controller.</h2><p>Small, focused tools for running Docker Swarm infrastructure.</p></div>
+        <div class="ecosystem-grid">
+          <a class="eco-card featured reveal" href="https://github.com/swarm-deploy/cloud-secrets" target="_blank" rel="noreferrer">
+            <div class="eco-top"><span class="eco-icon">◆</span><span class="eco-arrow">↗</span></div>
+            <small>SECRETS</small><h3>cloud-secrets</h3><p>Synchronize external secrets into native Docker Swarm secrets and roll services when values change.</p><div class="tags"><span>Vault</span><span>Docker Secrets</span><span>Prometheus</span></div>
+          </a>
+          <a class="eco-card reveal delay-1" href="https://github.com/swarm-deploy/cloud-vector" target="_blank" rel="noreferrer"><div class="eco-top"><span class="eco-icon">≋</span><span class="eco-arrow">↗</span></div><small>LOGGING</small><h3>cloud-vector</h3><p>Logging components focused on Docker Swarm workloads.</p></a>
+          <a class="eco-card reveal delay-2" href="https://github.com/swarm-deploy/node-agent" target="_blank" rel="noreferrer"><div class="eco-top"><span class="eco-icon">◫</span><span class="eco-arrow">↗</span></div><small>NODES</small><h3>node-agent</h3><p>Node metrics collection and maintenance helpers for Swarm infrastructure.</p></a>
+          <a class="eco-card reveal" href="https://github.com/swarm-deploy/init-jobs" target="_blank" rel="noreferrer"><div class="eco-top"><span class="eco-icon">▶</span><span class="eco-arrow">↗</span></div><small>BOOTSTRAP</small><h3>init-jobs</h3><p>Ready-to-use initialization jobs for common deployment workflows.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quickstart section-pad" id="quickstart">
+      <div class="container quick-grid">
+        <div class="quick-copy reveal">
+          <div class="section-kicker">05 / GET STARTED</div>
+          <h2>From zero to GitOps<br/><span>without the ceremony.</span></h2>
+          <p>Start from the basic example, generate configuration with the wizard, then deploy Swarm Deploy as a stack on a manager node.</p>
+          <a class="text-link" href="https://github.com/swarm-deploy/swarm-deploy/tree/master/example/01-basic" target="_blank" rel="noreferrer">Open basic example <span>↗</span></a>
+        </div>
+        <div class="code-card reveal delay-1">
+          <div class="code-head"><span>manager · bash</span><button class="copy-btn" data-copy="docker stack deploy --with-registry-auth -c docker-compose.yaml swarm-deploy --detach=false">Copy</button></div>
+          <pre><code><span class="prompt">$</span> git clone https://github.com/swarm-deploy/swarm-deploy.git
+<span class="prompt">$</span> cd swarm-deploy/example/01-basic
+
+<span class="comment"># Deploy the controller to your Swarm</span>
+<span class="prompt">$</span> docker stack deploy --with-registry-auth \
+    -c docker-compose.yaml swarm-deploy \
+    --detach=false</code></pre>
+          <div class="code-status"><span>✓</span> swarm-deploy deployed</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta section-pad">
+      <div class="cta-grid" aria-hidden="true"></div>
+      <div class="container cta-inner reveal">
+        <div class="brand-mark cta-mark"><svg viewBox="0 0 40 40"><path d="M20 3.5 34.3 11.75v16.5L20 36.5 5.7 28.25v-16.5Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="16" r="2.1" fill="currentColor"/><circle cx="26" cy="16" r="2.1" fill="currentColor"/><circle cx="20" cy="25" r="2.1" fill="currentColor"/><path d="M15.7 17.4 18.8 23M24.3 17.4 21.2 23M16.2 16h7.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h2>Your Swarm already works.<br/><span>Make deployments work like GitOps.</span></h2>
+        <p>Open source. Swarm-native. Designed for teams that want continuous delivery without changing orchestrators.</p>
+        <div class="hero-actions centered">
+          <a class="btn btn-primary" href="https://github.com/swarm-deploy/swarm-deploy" target="_blank" rel="noreferrer">Get Swarm Deploy <span>↗</span></a>
+          <a class="btn btn-secondary" href="https://swarm-deploy.github.io/swarm-deploy/docs/configurator/" target="_blank" rel="noreferrer">Open configurator</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 3.5 34.3 11.75v16.5L20 36.5 5.7 28.25v-16.5Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="16" r="2.1" fill="currentColor"/><circle cx="26" cy="16" r="2.1" fill="currentColor"/><circle cx="20" cy="25" r="2.1" fill="currentColor"/><path d="M15.7 17.4 18.8 23M24.3 17.4 21.2 23M16.2 16h7.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span>swarm-deploy</span></a>
+      <p>Continuous Delivery for Docker Swarm.</p>
+      <div class="footer-links"><a href="https://github.com/swarm-deploy" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/swarm-deploy/swarm-deploy" target="_blank" rel="noreferrer">Documentation</a><a href="https://github.com/swarm-deploy/swarm-deploy/issues" target="_blank" rel="noreferrer">Issues</a></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
